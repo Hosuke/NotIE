@@ -73,7 +73,7 @@ var play_state = {
             this.newblacktiles();
 
             // Bonus time limit
-            this.timelimit += 1;
+            this.timelimit += 0.3;
         }
         //this.gameOver();
     },
