@@ -1,5 +1,6 @@
 /**
  * Created by Hosuke on 25/04/2014.
+ *  * Copyright 2014 Huang Geyang
  */
 // Initialize Phaser
 var game = new Phaser.Game(320, 400, Phaser.AUTO, 'game_div');

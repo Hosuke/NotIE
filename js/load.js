@@ -1,5 +1,6 @@
 /**
  * Created by Hosuke on 25/04/2014.
+ *  * Copyright 2014 Huang Geyang
  */
 var load_state = {
     preload: function() {

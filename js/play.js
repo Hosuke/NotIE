@@ -1,5 +1,6 @@
 /**
- * Created by Hosuke on 25/04/2014.
+ * Created by Hosuke on 22/05/2014.
+ * Copyright 2014 Huang Geyang and He Yunen
  */
 var play_state = {
 
@@ -65,15 +66,21 @@ var play_state = {
             this.timeleft = this.timeleft.toFixed(2);
             this.timetext.setText(this.timeleft + 's');
             if (this.timeleft < 0){
+                alert("Game Over! Your score: "+score);
                 this.gameOver();
             }
         }
         if (this.blackcount == 0){
-            //TODO: update black tiles
             this.newblacktiles();
 
             // Bonus time limit
             this.timelimit += 0.3;
+
+            // Bonus time animation
+            var bonus_style = { font: "30px Arial", fill: "#ff851b" };
+            var bonustext = game.add.text(180,40,'+0.3s',bonus_style);
+            bonustext.anchor.setTo(0.5, 0.5);
+            this.game.add.tween(bonustext).to({ y: -50 }, 1000, Phaser.Easing.Cubic.Out, true).start();
         }
         //this.gameOver();
     },
@@ -116,6 +123,7 @@ var play_state = {
     change: function(tile) {
         if (tile.color == 0){
             //TODO: Game Lose
+            alert("Oops, you tapped on the IE!");
             this.gameOver();
         } else {
             tile.loadTexture('ie', 0);
