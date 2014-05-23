@@ -10,7 +10,7 @@ var play_state = {
         score = 0;
 
         // TODO: hide all social networks
-        document.getElementById('twitter').style.display = 'none';
+//        document.getElementById('twitter').style.display = 'none';
 
         var style = { font: "30px Arial", fill: "#ffffff" };
         this.scoretext =  this.game.add.text(40, 40, score, style);
@@ -124,10 +124,10 @@ var play_state = {
         this.game.time.events.remove(this.timer);
 
         //TODO: display all social networks
-        var twitter = document.getElementById('twitter');
-        twitter.style.display = 'block';
-        var twitext = 'I score '+score+' points in Not IE! Can you beat me? #NotIE# http://git.io/notie';
-        twitter.setAttribute("data-text", twitext);
+//        var twitter = document.getElementById('twitter');
+//        twitter.style.display = 'block';
+//        var twitext = 'I score '+score+' points in Not IE! Can you beat me? #NotIE# http://git.io/notie';
+//        twitter.setAttribute("data-text", twitext);
         this.game.state.start('menu');
     },
 
