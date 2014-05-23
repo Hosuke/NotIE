@@ -8,6 +8,10 @@ var play_state = {
 
     create: function() {
         score = 0;
+
+        // TODO: hide all social networks
+        document.getElementById('twitter').style.display = 'none';
+
         var style = { font: "30px Arial", fill: "#ffffff" };
         this.scoretext =  this.game.add.text(40, 40, score, style);
         this.scoretext.anchor.setTo(0.5, 0.5);
@@ -66,6 +70,7 @@ var play_state = {
             this.timeleft = this.timeleft.toFixed(2);
             this.timetext.setText(this.timeleft + 's');
             if (this.timeleft < 0){
+                this.timetext.setText('0.00s');
                 alert("Game Over! Your score: "+score);
                 this.gameOver();
             }
@@ -117,6 +122,12 @@ var play_state = {
 
     gameOver: function(){
         this.game.time.events.remove(this.timer);
+
+        //TODO: display all social networks
+        var twitter = document.getElementById('twitter');
+        twitter.style.display = 'block';
+        var twitext = 'I score '+score+' points in Not IE! Can you beat me? #NotIE# http://git.io/notie';
+        twitter.setAttribute("data-text", twitext);
         this.game.state.start('menu');
     },
 
