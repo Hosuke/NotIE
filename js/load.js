@@ -13,6 +13,9 @@ var load_state = {
         this.game.load.image('firefox','assets/firefox.png');
         this.game.load.image('safari','assets/safari.png');
 
+        this.game.load.audio('iese','assets/Laser_Shoot8.ogg');
+        this.game.load.audio('browserse','assets/Pickup_Coin3.ogg');
+        this.game.load.audio('bonusse','assets/Powerup19.ogg');
         // Load high score from cookie
         checkCookie();
 

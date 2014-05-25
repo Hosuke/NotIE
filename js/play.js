@@ -13,6 +13,11 @@ var play_state = {
         document.getElementById('facebook').style.display = 'none';
 //        document.getElementById('twitter').style.display = 'none';
 
+        // preload sound effects
+        this.iese = this.game.add.audio('iese');
+        this.browserse = this.game.add.audio('browserse');
+        this.bonusse = this.game.add.audio('bonusse');
+
         var style = { font: "30px Arial", fill: "#ffffff" };
         this.scoretext =  this.game.add.text(40, 40, score, style);
         this.scoretext.anchor.setTo(0.5, 0.5);
@@ -81,6 +86,7 @@ var play_state = {
 
             // Bonus time limit
             this.timelimit += 0.3;
+            this.bonusse.play();
 
             // Bonus time animation
             var bonus_style = { font: "30px Arial", fill: "#ff851b" };
@@ -142,11 +148,13 @@ var play_state = {
 
     change: function(tile) {
         if (tile.color == 0){
+            this.iese.play();
             //TODO: Game Lose
             this.gameLost();
             //alert("Oops, you tapped on the IE!");
             //this.gameOver();
         } else {
+            this.browserse.play();
             tile.loadTexture('ie', 0);
             tile.color = 0;
             this.blackcount -= 1;
