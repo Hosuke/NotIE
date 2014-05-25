@@ -11,10 +11,11 @@ var highscore = 0;
 
 
 // Define all the states
+game.state.add('boot', boot_state);
 game.state.add('load', load_state);
 game.state.add('menu', menu_state);
 game.state.add('play', play_state);
 game.state.add('lost', lost_state);
 
 // Start with the 'load' state
-game.state.start('load');
+game.state.start('boot');
