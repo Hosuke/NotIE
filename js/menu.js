@@ -9,6 +9,7 @@ var h = 400;
 var menu_state = {
 
     create: function() {
+        this.game.stage.backgroundColor = '#323A45';
         // Call the 'start' function when pressing the spacebar
         this.cursor = this.game.input.keyboard.createCursorKeys();
         this.spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -41,7 +42,12 @@ var menu_state = {
             score_label.anchor.setTo(0.5, 0.5);
         }
 
-        if (score > highscore) {highscore = score;}
+        if (score > highscore) {
+            highscore = score;
+
+            //Save highscore to cookie
+            setCookie("my_highscore",highscore.toString(),365);
+        }
 
         if (highscore > 0) {
             //Display high score

@@ -29,6 +29,13 @@
             margin-left:-40px;
             display: none;
         }
+        #facebook{
+            position: absolute;
+            left:50%;
+            top:90%;
+            margin-left:-40px;
+            display: none;
+        }
         #star{
             position: absolute;
             left:50%;
@@ -52,6 +59,10 @@
             margin-left:-80px;
             color: #ffffff
         }
+        @font-face {
+            font-family:"PostinoStd";
+            src: url('src/PressStart2P.ttf') format("truetype");
+        }
     </style>
 
     <!-- Google Analytics -->
@@ -69,11 +80,29 @@
 
 </head>
 <body>
+    <!-- Facebook Share -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=402368753236795&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!-- Main -->
+    <script type="text/javascript" src="js/cookie.js"></script>
     <script type="text/javascript" src="js/load.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/play.js"></script>
+    <script type="text/javascript" src="js/lost.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <div id="game_div"></div>
+
     <!-- TODO twitter share -->
+
+    <!-- Facebook Share -->
+    <div id="facebook" class="fb-share-button" data-href="http://hosuke.github.io/NotIE/" data-type="button_count"></div>
+
 </body>
 </html>

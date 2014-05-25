@@ -10,6 +10,7 @@ var play_state = {
         score = 0;
 
         // TODO: hide all social networks
+        document.getElementById('facebook').style.display = 'none';
 //        document.getElementById('twitter').style.display = 'none';
 
         var style = { font: "30px Arial", fill: "#ffffff" };
@@ -124,6 +125,7 @@ var play_state = {
         this.game.time.events.remove(this.timer);
 
         //TODO: display all social networks
+        document.getElementById('facebook').style.display = 'block';
 //        var twitter = document.getElementById('twitter');
 //        twitter.style.display = 'block';
 //        var twitext = 'I score '+score+' points in Not IE! Can you beat me? #NotIE# http://git.io/notie';
@@ -131,11 +133,19 @@ var play_state = {
         this.game.state.start('menu');
     },
 
+    //TODO: Game Lost
+    gameLost:function(){
+        this.game.time.events.remove(this.timer);
+        document.getElementById('facebook').style.display = 'block';
+        this.game.state.start('lost');
+    },
+
     change: function(tile) {
         if (tile.color == 0){
             //TODO: Game Lose
-            alert("Oops, you tapped on the IE!");
-            this.gameOver();
+            this.gameLost();
+            //alert("Oops, you tapped on the IE!");
+            //this.gameOver();
         } else {
             tile.loadTexture('ie', 0);
             tile.color = 0;

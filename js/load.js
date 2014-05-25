@@ -13,6 +13,10 @@ var load_state = {
         this.game.load.image('firefox','assets/firefox.png');
         this.game.load.image('safari','assets/safari.png');
 
+        // Load high score from cookie
+        checkCookie();
+
+
     },
 
     create: function() {
