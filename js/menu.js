@@ -42,18 +42,22 @@ var menu_state = {
             var score_label = this.game.add.text(x, y+40, "score: " + score, style);
             score_label.anchor.setTo(0.5, 0.5);
 
-//            var tweet = document.createElement("a");
-//            tweet.classList.add("twitter-share-button");
-//            tweet.setAttribute("id", "twitter");
-//            tweet.setAttribute("href", "https://twitter.com/share");
-//            tweet.setAttribute("data-via", "huanggeyang");
-//            tweet.setAttribute("data-url", "http://poke2048.com");
-//            tweet.setAttribute("data-counturl", "http://poke2048.com");
-//            tweet.textContent = "Tweet";
-//
-//            var text = "I scored " + this.score + " points at Poké2048, a game where you " +
-//                "can catch MEW in 2048! #Poké2048#";
-//            tweet.setAttribute("data-text", text);
+            // Add twitter
+            this.sharingContainer = document.querySelector(".score-sharing");
+            var tweet = document.createElement("a");
+            tweet.classList.add("twitter-share-button");
+            tweet.setAttribute("id", "twitter");
+            tweet.setAttribute("href", "https://twitter.com/share");
+            tweet.setAttribute("data-via", "HuangGeyang");
+            tweet.setAttribute("data-url", "http://git.io/notie");
+            tweet.setAttribute("data-counturl", "http://git.io/notie");
+            tweet.textContent = "Tweet";
+            var twitext = "I scored " + score + " points in NOT IE, Can you beat me in NOT IE?" +
+                "#NOTIE#";
+            tweet.setAttribute("data-text", twitext);
+            this.sharingContainer.appendChild(tweet);
+            twttr.widgets.load();
+
         }
 
         if (score > highscore) {
@@ -73,6 +77,10 @@ var menu_state = {
 
     update: function() {
         if (this.spaceKey.isDown || this.pointer.isDown || this.mousePointer.isDown) {
+            if (score > 0){
+                // Delete twitter
+                this.sharingContainer.removeChild(this.sharingContainer.lastChild);
+            }
             this.game.state.start('play');
         }
     }

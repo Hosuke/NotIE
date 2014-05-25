@@ -11,7 +11,6 @@ var play_state = {
 
         // TODO: hide all social networks
         document.getElementById('facebook').style.display = 'none';
-        document.getElementById('twitter').style.display = 'none';
 
         // preload sound effects
         this.iese = this.game.add.audio('iese');
@@ -132,11 +131,6 @@ var play_state = {
 
         //TODO: display all social networks
         document.getElementById('facebook').style.display = 'block';
-        document.getElementById('twitter').style.display = 'block';
-        var twitext = 'I score '+score+' points in Not IE! Can you beat me? #NotIE# http://git.io/notie';
-        document.getElementById("twitter").setAttribute("data-text",twitext);
-
-
         this.game.state.start('menu');
     },
 
@@ -144,9 +138,6 @@ var play_state = {
     gameLost:function(){
         this.game.time.events.remove(this.timer);
         document.getElementById('facebook').style.display = 'block';
-        document.getElementById('twitter').style.display = 'block';
-        var twitext = 'I score '+score+' points in Not IE! Can you beat me? #NotIE# http://git.io/notie';
-        document.getElementById("twitter").setAttribute("data-text", twitext);
         this.game.state.start('lost');
     },
 

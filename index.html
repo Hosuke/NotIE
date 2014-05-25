@@ -23,18 +23,25 @@
             margin-right: auto;
         }
         #twitter{
-            position: absolute;
-            left:50%;
-            top:85%;
-            margin-left:-40px;
-            display: none;
+            /*position: absolute;*/
+            /*left:50%;*/
+            /*top:85%;*/
+            /*margin-left:-40px;*/
+            display: block;
         }
         #facebook{
+            /*position: absolute;*/
+            /*left:50%;*/
+            /*top:90%;*/
+            /*margin-left:-40px;*/
+            display: none;
+        }
+        .score-sharing{
             position: absolute;
             left:50%;
-            top:90%;
+            top:80%;
             margin-left:-40px;
-            display: none;
+            display: block;
         }
         #star{
             position: absolute;
@@ -99,12 +106,14 @@
     <script type="text/javascript" src="js/game.js"></script>
     <div id="game_div"></div>
 
-    <!-- TODO twitter share -->
-    <a id="twitter" href="https://twitter.com/share" class="twitter-share-button" data-text="Can you beat me in Not IE?" data-via="HuangGeyang" data-hashtags="NOTIE">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <div class="score-sharing">
+        <!-- TODO twitter share -->
+        <!--<a id="twitter" href="https://twitter.com/share" class="twitter-share-button" data-text="Can you beat me in Not IE?" data-via="HuangGeyang" data-hashtags="NOTIE">Tweet</a>-->
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <!-- Facebook Share -->
+        <div id="facebook" class="fb-share-button" data-href="http://git.io/notie" data-type="button_count"></div>
 
-    <!-- Facebook Share -->
-    <div id="facebook" class="fb-share-button" data-href="http://hosuke.github.io/NotIE/" data-type="button_count"></div>
+    </div>
 
 </body>
 </html>
