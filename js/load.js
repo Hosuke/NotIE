@@ -36,6 +36,8 @@ var load_state = {
         this.game.load.image('opera','assets/opera.png');
         this.game.load.image('firefox','assets/firefox.png');
         this.game.load.image('safari','assets/safari.png');
+        this.game.load.image('doge','assets/dogemodified.png');
+
 
         this.game.load.audio('iese','assets/Laser_Shoot8.wav');
         this.game.load.audio('browserse','assets/Pickup_Coin14.wav');

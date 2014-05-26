@@ -48,8 +48,11 @@ var play_state = {
                         tile = this.tiles.create(12 + 75 * x, 80 + 75 * y, 'firefox', x + 4 * y);
                     } else if (r2 < 0.75){
                         tile = this.tiles.create(12 + 75 * x, 80 + 75 * y, 'opera', x + 4 * y);
-                    } else {
+                    } else if (r2 < 0.99){
                         tile = this.tiles.create(12 + 75 * x, 80 + 75 * y, 'safari', x + 4 * y);
+                    } else {
+                        tile = this.tiles.create(12 + 75 * x, 80 + 75 * y, 'doge', x + 4 * y);
+                        tile.isDoge = 1;
                     }
                     tile.color = 1;
                     this.blackcount += 1;
@@ -104,6 +107,7 @@ var play_state = {
                 var r = Math.random();
                 if (r < 0.3){
                     tile = this.tiles.getAt(x+4*y);
+                    tile.isDoge = 0;
                     var r2 = Math.random();
                     if (r2 < 0.25) {
                         tile.loadTexture('chrome', 0);
@@ -111,8 +115,11 @@ var play_state = {
                         tile.loadTexture('firefox', 0);
                     } else if (r2 < 0.75){
                         tile.loadTexture('opera', 0);
-                    } else {
+                    } else if (r2 < 0.99){
                         tile.loadTexture('safari', 0);
+                    } else {
+                        tile.loadTexture('doge', 0);
+                        tile.isDoge = 1;
                     }
                     tile.color = 1;
                     this.blackcount += 1;
@@ -152,6 +159,12 @@ var play_state = {
             tile.color = 0;
             this.blackcount -= 1;
             score += 1;
+
+            // Doge Bonus
+            if (tile.isDoge == 1) {
+                score += 9;
+            }
+
             this.scoretext.setText(score);
         }
     }
