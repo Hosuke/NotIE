@@ -4,11 +4,11 @@
 var w = 320;
 var h = 400;
 
-var lost_state = {
+var win_state = {
 
     create: function() {
         // Background
-        this.game.stage.backgroundColor = '#2400CB';
+        this.game.stage.backgroundColor = '#ff4136';
 
         // Call the 'start' function when pressing the spacebar
         this.spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -24,7 +24,7 @@ var lost_state = {
 
 
         // TODO: Game Over Text using PressStart2P
-        var overtextstyle = { font: "35px Impact", fill: "#2400CB" };
+        var overtextstyle = { font: "35px Impact", fill: "#ff4136" };
         var overtext = this.game.add.text(w/2, 60, 0, overtextstyle);
         //overtext.font = "PostinoStd";
         overtext.text = 'Game Over';
@@ -37,14 +37,16 @@ var lost_state = {
         var x = 160, y = 240;
 
         // Adding a text centered on the screen
-        var helpertext = this.game.add.text(x, y-110, "You just tapped on IE", style);
+        var helpertext = this.game.add.text(x, y-110, "Good Job!", style);
         helpertext.anchor.setTo(0.5, 0.5);
+
+        // Adding a text centered on the screen
+        var text = this.game.add.text(x, y-70, "Your score is "+score.toString(), style);
+        text.anchor.setTo(0.5, 0.5);
 
         // If the user already played
         if (score > 0) {
-            // Display its score
-            var score_label = this.game.add.text(x, y-70, "score: " + score, style);
-            score_label.anchor.setTo(0.5, 0.5);
+            // Share score
         }
 
         // weibo
@@ -64,7 +66,6 @@ var lost_state = {
     },
 
     update: function() {
-
     },
 
     toMenu: function() {

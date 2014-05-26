@@ -16,6 +16,7 @@ game.state.add('load', load_state);
 game.state.add('menu', menu_state);
 game.state.add('play', play_state);
 game.state.add('lost', lost_state);
+game.state.add('win', win_state);
 
 // Start with the 'load' state
 game.state.start('boot');

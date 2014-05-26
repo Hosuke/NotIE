@@ -16,6 +16,7 @@ var play_state = {
         this.iese = this.game.add.audio('iese');
         this.browserse = this.game.add.audio('browserse');
         this.bonusse = this.game.add.audio('bonusse');
+        this.dogese = this.game.add.audio('dogese');
 
         var style = { font: "30px Arial", fill: "#ffffff" };
         this.scoretext =  this.game.add.text(40, 40, score, style);
@@ -78,8 +79,6 @@ var play_state = {
             this.timeleft = this.timeleft.toFixed(2);
             this.timetext.setText(this.timeleft + 's');
             if (this.timeleft < 0){
-                this.timetext.setText('0.00s');
-                alert("Game Over! Your score: "+score);
                 this.gameOver();
             }
         }
@@ -138,7 +137,7 @@ var play_state = {
 
         //TODO: display all social networks
         document.getElementById('facebook').style.display = 'block';
-        this.game.state.start('menu');
+        this.game.state.start('win');
     },
 
     //TODO: Game Lost
@@ -154,7 +153,6 @@ var play_state = {
             //TODO: Game Lose
             this.gameLost();
         } else {
-            this.browserse.play();
             tile.loadTexture('ie', 0);
             tile.color = 0;
             this.blackcount -= 1;
@@ -162,7 +160,10 @@ var play_state = {
 
             // Doge Bonus
             if (tile.isDoge == 1) {
+                this.dogese.play();
                 score += 9;
+            } else {
+                this.browserse.play();
             }
 
             this.scoretext.setText(score);

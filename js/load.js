@@ -38,10 +38,14 @@ var load_state = {
         this.game.load.image('safari','assets/safari.png');
         this.game.load.image('doge','assets/dogemodified.png');
 
+        this.game.load.image('continue','assets/continue.png');
+        this.game.load.image('weibo','assets/weibo5050white.png');
+        this.game.load.image('twitter','assets/twitter5050white.png');
 
         this.game.load.audio('iese','assets/Laser_Shoot8.wav');
         this.game.load.audio('browserse','assets/Pickup_Coin14.wav');
         this.game.load.audio('bonusse','assets/Powerup19.wav');
+        this.game.load.audio('dogese','assets/Powerup35.wav');
 
         // Load high score from cookie
         checkCookie();

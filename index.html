@@ -39,7 +39,7 @@
         .score-sharing{
             position: absolute;
             left:50%;
-            top:80%;
+            top:90%;
             margin-left:-40px;
             display: block;
         }
@@ -83,8 +83,6 @@
         ga('send', 'pageview');
 
     </script>
-    <!---->
-
 </head>
 <body>
     <!-- Facebook Share -->
@@ -98,18 +96,20 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- Main -->
+    <script type="text/javascript" src="js/share.js"></script>
     <script type="text/javascript" src="js/cookie.js"></script>
     <script type="text/javascript" src="js/load.js"></script>
     <script type="text/javascript" src="js/menu.js"></script>
     <script type="text/javascript" src="js/play.js"></script>
     <script type="text/javascript" src="js/lost.js"></script>
+    <script type="text/javascript" src="js/win.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <div id="game_div"></div>
 
     <div class="score-sharing">
         <!-- TODO twitter share -->
         <!--<a id="twitter" href="https://twitter.com/share" class="twitter-share-button" data-text="Can you beat me in Not IE?" data-via="HuangGeyang" data-hashtags="NOTIE">Tweet</a>-->
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+        <!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>-->
         <!-- Facebook Share -->
         <div id="facebook" class="fb-share-button" data-href="http://git.io/notie" data-type="button_count"></div>
 
