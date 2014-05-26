@@ -15,16 +15,16 @@ function share(sType){
 	}
 	var i = l.indexOf("/",8);
 	var strHost = l.substring(0,i);
-	if (strHost!="http://git.io/notie"){
-		l = "http://git.io/notie" + l.substr(i);
+	if (strHost!="http://hosuke.github.io/NotIE/"){
+		l = "http://hosuke.github.io/NotIE/" + l.substr(i);
 	}
 
 	var t=sName;
 	var s=screen;
 	var sImgUrl=_strGamePic;
-	var sContent=['我在 NOT IE 里玩了',score.toString(),'分，你能得多少分呢？ 现在就来挑战一下吧！http://git.io/notie @Hosuke'].join('');
+	var sContent=['我在 NOT IE 里玩了',score.toString(),'分，你能得多少分呢？ 现在就来挑战一下吧！http://hosuke.github.io/NotIE/ @Hosuke'].join('');
     var sContentEN=['I scored ',score.toString(),' points in NOT IE! Can you beat me?'].join('');
-	var sUrl='http://git.io/notie';
+	var sUrl='http://hosuke.github.io/NotIE/';
 	var w=600;
 	var h=500;
 	var statFlag='';
@@ -44,7 +44,7 @@ function share(sType){
 	}
 	else if (sType=='twitter')
 	{
-		sUrl=['https://twitter.com/intent/tweet?original_referer=',en('http://git.io/notie'),'&url=',en(l),'&text=',en(sContentEN),'&via=',en('HuangGeyang'),'&hashtags=',en('NOTIE'),'&pic=',en(sImgUrl)].join('');
+		sUrl=['https://twitter.com/intent/tweet?original_referer=',en('http://hosuke.github.io/NotIE/'),'&url=',en(l),'&text=',en(sContentEN),'&via=',en('HuangGeyang'),'&hashtags=',en('NOTIE'),'&pic=',en(sImgUrl)].join('');
 		w=700;
 		h=470;
 		statFlag='tqq';
