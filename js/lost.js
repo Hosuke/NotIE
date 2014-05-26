@@ -15,22 +15,10 @@ var lost_state = {
         this.mousePointer = this.game.input.mousePointer;
         this.pointer = this.game.input.pointer1;
 
-        // Rectangle
-        var rectGraphics = this.game.add.graphics(60, 30);
-        rectGraphics.lineStyle(0.1, 0xffffff);
-        rectGraphics.beginFill(0xffffff);
-        rectGraphics.drawRect(0, 0, 200, 50);
-        rectGraphics.endFill();
 
+        // Game Over Text using PressStart2P
+        this.game.add.image(60,35,'gameover');
 
-        // TODO: Game Over Text using PressStart2P
-        var overtextstyle = { font: "35px Impact", fill: "#2400CB" };
-        var overtext = this.game.add.text(w/2, 60, 0, overtextstyle);
-        //overtext.font = "PostinoStd";
-        overtext.text = 'Game Over';
-        overtext.anchor.setTo(0.5, 0.5);
-
-        //this.game.add.tween(logo).to({ y: h/2-100 }, 1000, Phaser.Easing.Bounce.Out).start();
 
         // Defining variables
         var style = { font: "20px Andale Mono", fill: "#ffffff" };
