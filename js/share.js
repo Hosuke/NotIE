@@ -22,7 +22,7 @@ function share(sType){
 	var t=sName;
 	var s=screen;
 	var sImgUrl=_strGamePic;
-	var sContent=['我在 NOT IE 里玩了',score.toString(),'分，你能得多少分呢？ 现在就来挑战一下吧！http://git.io/notie'].join('');
+	var sContent=['我在 NOT IE 里玩了',score.toString(),'分，你能得多少分呢？ 现在就来挑战一下吧！http://git.io/notie @Hosuke'].join('');
     var sContentEN=['I scored ',score.toString(),' points in NOT IE! Can you beat me?'].join('');
 	var sUrl='http://git.io/notie';
 	var w=600;
