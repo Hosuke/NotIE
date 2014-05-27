@@ -36,13 +36,23 @@ var win_state = {
         }
 
         // weibo
-        this.game.add.button(80,220,'weibo',function(){
+        this.game.add.button(100,200,'weibo',function(){
             share('xlwb');
         });
 
         //twitter
-        this.game.add.button(190,220,'twitter',function(){
+        this.game.add.button(170,200,'twitter',function(){
             share('twitter');
+        });
+
+        // renren
+        this.game.add.button(100,260,'renren',function(){
+            share('renren');
+        });
+
+        // facebook
+        this.game.add.button(170,260,'facebook',function(){
+            share('facebook');
         });
 
         // Continue

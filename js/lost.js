@@ -8,7 +8,7 @@ var lost_state = {
 
     create: function() {
         // Background
-        this.game.stage.backgroundColor = '#2400CB';
+        this.game.stage.backgroundColor = '#2093C9';
 
         // Call the 'start' function when pressing the spacebar
         this.spaceKey = this.game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
@@ -36,13 +36,23 @@ var lost_state = {
         }
 
         // weibo
-        this.game.add.button(80,220,'weibo',function(){
+        this.game.add.button(100,200,'weibo',function(){
             share('xlwb');
         });
 
         //twitter
-        this.game.add.button(190,220,'twitter',function(){
+        this.game.add.button(170,200,'twitter',function(){
             share('twitter');
+        });
+
+        // renren
+        this.game.add.button(100,260,'renren',function(){
+            share('renren');
+        });
+
+        // facebook
+        this.game.add.button(170,260,'facebook',function(){
+            share('facebook');
         });
 
         // Continue

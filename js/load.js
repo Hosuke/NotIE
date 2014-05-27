@@ -42,6 +42,8 @@ var load_state = {
         this.game.load.image('gameover','assets/gameover.png');
         this.game.load.image('weibo','assets/weibo.png');
         this.game.load.image('twitter','assets/twitter.png');
+        this.game.load.image('facebook','assets/facebook.png');
+        this.game.load.image('renren','assets/renren.png');
 
         this.game.load.audio('iese','assets/Laser_Shoot8.wav');
         this.game.load.audio('browserse','assets/Pickup_Coin14.wav');

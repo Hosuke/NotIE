@@ -5,7 +5,7 @@ function share(sType){
     _hset = 400,
     _w = 320,
     _h = 400,
-    _strGamePic="assets/ie.png";
+    _strGamePic="http://hosuke.github.io/NotIE/assets/screenshot.PNG";
 
 	var en=encodeURIComponent;
 	var l=document.location.href;
@@ -24,6 +24,7 @@ function share(sType){
 	var sImgUrl=_strGamePic;
 	var sContent=['我在 NOT IE 里玩了',score.toString(),'分，你能得多少分呢？ 现在就来挑战一下吧！http://hosuke.github.io/NotIE/ @Hosuke'].join('');
     var sContentEN=['I scored ',score.toString(),' points in NOT IE! Can you beat me?'].join('');
+    var fbContent = 'I%20scored%20'+score.toString()+'%20in%20NOT%20IE%20!%20Can%20you%20beat%20me%3F';
 	var sUrl='http://hosuke.github.io/NotIE/';
 	var w=600;
 	var h=500;
@@ -51,11 +52,31 @@ function share(sType){
 	}
 	else if (sType=='facebook')
 	{
-		sUrl=['http://www.facebook.com/share.php?u=',en(l),'&description=',en(sContentEN),'&pic=',en(sImgUrl)].join('');
-		w=700;
+//		sUrl="http://www.facebook.com/share.php?u=http%3A%2F%2Fgit.io%2Fnotie&name=I%20scored%20"+score.toString()+"%20in%20NOT%20IE%20!%20Can%20you%20beat%20me%3F";
+		sUrl="https://www.facebook.com/dialog/feed?app_id=402368753236795&description=Do%20not%20tap%20on%20IE&display=popup&e2e=%7B%7D"
+            +"&link=http%3A%2F%2Fhosuke.github.io%2FNotIE"+"&locale=en_GB&name=I%20scored%20"
+            +score.toString()
+            +"%20in%20NOT%20IE%20!%20Can%20you%20beat%20me%3F"
+            +"&next=http%3A%2F%2Fhosuke.github.io%2FNotIE"
+            +"&picture=http%3A%2F%2Fhosuke.github.io%2FNotIE%2Fassets%2Fscreenshot.PNG"
+            +"&sdk=joey";
+        w=700;
 		h=470;
 		statFlag='tqq';
 	}
+    else if (sType == 'renren')
+    {
+        sUrl="http://widget.renren.com/dialog/share?"
+            +"resourceUrl=http%3A%2F%2Fhosuke.github.io%2FNotIE"
+            +"&title=我在NOT%20IE中得了"
+            +score.toString()
+            +"分，来比比吧！"
+            +"&description=山无棱%20天地合%20才敢用IE"
+            +"&images=http%3A%2F%2Fhosuke.github.io%2FNotIE%2Fassets%2Fscreenshot.PNG"
+            +"&charset=utf-8";
+        w=700;
+        h=470;
+    }
 
 	x=function()
 	{
