@@ -9,9 +9,6 @@ var play_state = {
     create: function() {
         score = 0;
 
-        // TODO: hide all social networks
-        document.getElementById('facebook').style.display = 'none';
-
         // preload sound effects
 //        this.iese = this.game.add.audio('iese');
 //        this.browserse = this.game.add.audio('browserse');
@@ -134,16 +131,12 @@ var play_state = {
 
     gameOver: function(){
         this.game.time.events.remove(this.timer);
-
-        //TODO: display all social networks
-        document.getElementById('facebook').style.display = 'block';
         this.game.state.start('win');
     },
 
     //TODO: Game Lost
     gameLost:function(){
         this.game.time.events.remove(this.timer);
-        document.getElementById('facebook').style.display = 'block';
         this.game.state.start('lost');
     },
 

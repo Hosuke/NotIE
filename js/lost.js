@@ -21,7 +21,7 @@ var lost_state = {
 
 
         // Defining variables
-        var style = { font: "20px Andale Mono", fill: "#ffffff" };
+        var style = { font: "20px Arial", fill: "#ffffff" };
         var x = 160, y = 240;
 
         // Adding a text centered on the screen
