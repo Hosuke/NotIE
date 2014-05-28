@@ -31,7 +31,7 @@ function share(sType){
 	var statFlag='';
 	if (sType=='xlwb')
 	{
-		sUrl=['http://v.t.sina.com.cn/share/share.php?c=&url=',en(l),'&title=',en(sContent),'&content=utf8&pic=',en(sImgUrl)].join('');
+		sUrl=['http://v.t.sina.com.cn/share/share.php?c=&url=http%3A%2F%2Fhosuke.github.io%2FNotIE&title=',en(sContent),'&content=utf8&pic=',en(sImgUrl)].join('');
 		w=610;
 		h=570;
 		statFlag='tsina';
