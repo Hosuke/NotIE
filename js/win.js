@@ -23,17 +23,15 @@ var win_state = {
         var x = 160, y = 240;
 
         // Adding a text centered on the screen
-        var helpertext = this.game.add.text(x, y-110, "Good Job!", style);
+        var helpertext = this.game.add.text(x, y-130, "Good Job!", style);
         helpertext.anchor.setTo(0.5, 0.5);
 
         // Adding a text centered on the screen
-        var text = this.game.add.text(x, y-70, "Your score is "+score.toString(), style);
+        var text = this.game.add.text(x, y-100, "Your score is "+score.toString(), style);
         text.anchor.setTo(0.5, 0.5);
 
-        // If the user already played
-        if (score > 0) {
-            // Share score
-        }
+        var sharetext = this.game.add.text(x, y-60, "SHARE 分享", style);
+        sharetext.anchor.setTo(0.5, 0.5);
 
         // weibo
         this.game.add.button(100,200,'weibo',function(){
@@ -56,7 +54,9 @@ var win_state = {
         });
 
         // Continue
-        this.game.add.button(60,320,'continue',this.toMenu, this);
+        var cont = this.game.add.button(60,320,'continue',this.toMenu, this);
+        cont.alpha = 0;
+        this.game.add.tween(cont).delay(1000).to({ alpha: 1}, 500).start();
 
 
     },

@@ -16,12 +16,12 @@ var play_state = {
         this.dogese = this.game.add.audio('dogese');
 
         var style = { font: "30px Arial", fill: "#ffffff" };
-        this.scoretext =  this.game.add.text(40, 40, score, style);
+        this.scoretext =  this.game.add.text(40, 40, score, { font: "30px Arial", fill: "#ffffff" });
         this.scoretext.anchor.setTo(0.5, 0.5);
         this.scoretext.setText(score);
 
         this.startTime = Math.floor(this.game.time.time);
-        this.timetext = this.game.add.text(260, 40, 0, style);
+        this.timetext = this.game.add.text(260, 40, 0, { font: "30px Arial", fill: "#ffffff" });
         this.timetext.anchor.setTo(0.5, 0.5);
         this.timelimit = 30;
 
@@ -66,6 +66,13 @@ var play_state = {
                 //tile.events.onPointerDown.add(this.change);
             }
         }
+
+        // Explosion
+        this.explosion = game.add.emitter(0, 0, 50);
+        this.explosion.makeParticles('pixel');
+        this.explosion.setYSpeed(-300, 300);
+        this.explosion.setXSpeed(-300, 300);
+        this.explosion.gravity = 0;
     },
 
     update: function() {
@@ -76,6 +83,9 @@ var play_state = {
             this.timeleft = this.timelimit - this.currentTime;
             this.timeleft = this.timeleft.toFixed(2);
             this.timetext.setText(this.timeleft + 's');
+            if (this.timeleft < 5){
+                this.timetext.fill = '#ff4136';
+            }
             if (this.timeleft < 0){
                 this.gameOver();
             }
@@ -91,6 +101,7 @@ var play_state = {
             var bonus_style = { font: "30px Arial", fill: "#ff851b" };
             var bonustext = game.add.text(180,40,'+0.3s',bonus_style);
             bonustext.anchor.setTo(0.5, 0.5);
+            bonustext.setShadow(5, 5, 'rgba(0,0,0,0.5)', 5);
             this.game.add.tween(bonustext).to({ y: -50 }, 1000, Phaser.Easing.Cubic.Out, true).start();
         }
     },
@@ -146,10 +157,16 @@ var play_state = {
             //TODO: Game Lose
             this.gameLost();
         } else {
+            // change into ie
             tile.loadTexture('ie', 0);
             tile.color = 0;
             this.blackcount -= 1;
             score += 1;
+
+            // explode
+            this.explosion.x = tile.x + 35;
+            this.explosion.y = tile.y + 35;
+            this.explosion.start(true, 150, null, 15);
 
             // Doge Bonus
             if (tile.isDoge == 1) {

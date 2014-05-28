@@ -31,6 +31,7 @@ var load_state = {
         this.game.stage.backgroundColor = '#323A45';
         this.game.load.image('black','assets/black70.png');
         this.game.load.image('white','assets/white70.png');
+        this.game.load.image('pixel','assets/pixel.png');
         this.game.load.image('ie','assets/ie.png');
         this.game.load.image('chrome','assets/chrome.png');
         this.game.load.image('opera','assets/opera.png');
