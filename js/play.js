@@ -20,7 +20,7 @@ var play_state = {
         this.scoretext.anchor.setTo(0.5, 0.5);
         this.scoretext.setText(score);
 
-        this.startTime = Math.floor(this.game.time.time / 10) % 100000;
+        this.startTime = Math.floor(this.game.time.time);
         this.timetext = this.game.add.text(260, 40, 0, style);
         this.timetext.anchor.setTo(0.5, 0.5);
         this.timelimit = 30;
@@ -71,7 +71,8 @@ var play_state = {
     update: function() {
         // update game time
         {
-            this.currentTime = (Math.floor(this.game.time.time / 10) % 100000 - this.startTime)/100;
+            this.currentTime = Math.floor(this.game.time.time) - this.startTime;
+            this.currentTime = this.currentTime / 1000;
             this.timeleft = this.timelimit - this.currentTime;
             this.timeleft = this.timeleft.toFixed(2);
             this.timetext.setText(this.timeleft + 's');

@@ -15,8 +15,8 @@ function share(sType){
 	}
 	var i = l.indexOf("/",8);
 	var strHost = l.substring(0,i);
-	if (strHost!="http://hosuke.github.io/NotIE/"){
-		l = "http://hosuke.github.io/NotIE/" + l.substr(i);
+	if (strHost!="http://hosuke.github.io/NotIE"){
+		l = "http://hosuke.github.io/NotIE" + l.substr(i);
 	}
 
 	var t=sName;
