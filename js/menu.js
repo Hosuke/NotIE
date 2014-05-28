@@ -29,17 +29,27 @@ var menu_state = {
         var x = 160, y = 240;
 
         // Adding a text centered on the screen
-        var helpertext = this.game.add.text(x, y-50, "Do not tap on IE", style);
+        var helpertext = this.game.add.text(x, y-60, "Do not tap on IE", style);
         helpertext.anchor.setTo(0.5, 0.5);
 
         // Adding a text centered on the screen
-        var text = this.game.add.text(x, y-20, "Tap Screen to start", style);
-        text.anchor.setTo(0.5, 0.5);
+        var chinesetext = this.game.add.text(x, y-30, "不要点IE哟", style);
+        chinesetext.anchor.setTo(0.5, 0.5);
+
+        // Sound Toggle
+        this.sound_toggle = this.game.add.button(w-20, 20, 'sound', this.toggle_sound, this);
+        this.sound_toggle.anchor.setTo(1, 0);
+        this.sound_toggle.alpha = 0;
+        this.game.add.tween(this.sound_toggle).delay(500).to({ alpha: 1}, 500).start();
+        if (!sound)
+            this.sound_toggle.frame = 1;
+
+        var scorestyle = { font: "20px Arial", fill: "#ffffff" };
 
         // If the user already played
         if (score > 0) {
             // Display its score
-            var score_label = this.game.add.text(x, y+40, "Score: " + score, style);
+            var score_label = this.game.add.text(x, y+20, "Score: " + score, scorestyle);
             score_label.anchor.setTo(0.5, 0.5);
         }
 
@@ -53,19 +63,32 @@ var menu_state = {
 
         if (highscore > 0) {
             //Display high score
-            var highscore_label = this.game.add.text (x, y+70, 'High Score: '+ highscore, style);
+            var highscore_label = this.game.add.text (x, y+50, 'High Score: '+ highscore, scorestyle);
             highscore_label.anchor.setTo(0.5, 0.5);
         }
 
+        // Continue
+        this.game.add.button(60,320,'continue',function(){
+            this.game.state.start('play');
+        }, this);
+
         // Copyright label
-        var copyright_label = this.game.add.text (x, 390, '© 2014 Huang Geyang and He Yunen', { font: "12px Arial", fill: "#ffffff" });
+        var copyright_label = this.game.add.text (x, 390, '© 2014 Huang Geyang and Chen Lu', { font: "12px Arial", fill: "#ffffff" });
         copyright_label.anchor.setTo(0.5, 0.5);
 
     },
 
     update: function() {
-        if (this.spaceKey.isDown || this.pointer.isDown || this.mousePointer.isDown) {
-            this.game.state.start('play');
+    },
+
+    toggle_sound: function() {
+        if (this.sound_toggle.frame == 0) {
+            this.sound_toggle.frame = 1;
+            sound = false;
+        }
+        else {
+            this.sound_toggle.frame = 0;
+            sound = true;
         }
     }
 };

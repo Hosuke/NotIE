@@ -10,10 +10,10 @@ var play_state = {
         score = 0;
 
         // preload sound effects
-//        this.iese = this.game.add.audio('iese');
-//        this.browserse = this.game.add.audio('browserse');
-//        this.bonusse = this.game.add.audio('bonusse');
-//        this.dogese = this.game.add.audio('dogese');
+        this.iese = this.game.add.audio('iese');
+        this.browserse = this.game.add.audio('browserse');
+        this.bonusse = this.game.add.audio('bonusse');
+        this.dogese = this.game.add.audio('dogese');
 
         var style = { font: "30px Arial", fill: "#ffffff" };
         this.scoretext =  this.game.add.text(40, 40, score, style);
@@ -85,7 +85,7 @@ var play_state = {
 
             // Bonus time limit
             this.timelimit += 0.3;
-//            this.bonusse.play();
+            if (sound) this.bonusse.play();
 
             // Bonus time animation
             var bonus_style = { font: "30px Arial", fill: "#ff851b" };
@@ -93,7 +93,6 @@ var play_state = {
             bonustext.anchor.setTo(0.5, 0.5);
             this.game.add.tween(bonustext).to({ y: -50 }, 1000, Phaser.Easing.Cubic.Out, true).start();
         }
-        //this.gameOver();
     },
 
     newblacktiles: function(){
@@ -143,7 +142,7 @@ var play_state = {
 
     change: function(tile) {
         if (tile.color == 0){
-//            this.iese.play();
+            if (sound) this.iese.play();
             //TODO: Game Lose
             this.gameLost();
         } else {
@@ -154,10 +153,10 @@ var play_state = {
 
             // Doge Bonus
             if (tile.isDoge == 1) {
-//                this.dogese.play();
+                if (sound) this.dogese.play();
                 score += 9;
             } else {
-//                this.browserse.play();
+                if (sound) this.browserse.play();
             }
 
             this.scoretext.setText(score);

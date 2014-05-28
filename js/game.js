@@ -9,6 +9,9 @@ var game = new Phaser.Game(320, 400, Phaser.AUTO, 'game_div');
 var score = 0;
 var highscore = 0;
 
+// sound
+var sound = 1;
+
 
 // Define all the states
 game.state.add('boot', boot_state);

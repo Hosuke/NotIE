@@ -45,10 +45,12 @@ var load_state = {
         this.game.load.image('facebook','assets/facebook.png');
         this.game.load.image('renren','assets/renren.png');
 
-//        this.game.load.audio('iese','assets/Laser_Shoot8.wav');
-//        this.game.load.audio('browserse','assets/Pickup_Coin14.wav');
-//        this.game.load.audio('bonusse','assets/Powerup19.wav');
-//        this.game.load.audio('dogese','assets/Powerup35.wav');
+        this.game.load.spritesheet('sound','assets/sound.png', 28, 22);
+
+        this.game.load.audio('iese','assets/Laser_Shoot8.wav');
+        this.game.load.audio('browserse','assets/Pickup_Coin14.wav');
+        this.game.load.audio('bonusse','assets/Powerup19.wav');
+        this.game.load.audio('dogese','assets/Powerup35.wav');
 
         // Load high score from cookie
         checkCookie();
