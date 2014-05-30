@@ -72,6 +72,12 @@ var menu_state = {
         if (!sound)
             this.sound_toggle.frame = 1;
 
+        // Full Screen Toggle
+        this.fulscr = this.game.add.button(w-20, 50, 'fulscr', this.toggle_screen, this);
+        this.fulscr.anchor.setTo(1, 0);
+        this.fulscr.alpha = 0;
+        this.game.add.tween(this.fulscr).delay(500).to({ alpha: 1}, 500).start();
+
         var scorestyle = { font: "20px Arial", fill: "#ffffff" };
 
         // If the user already played
@@ -126,6 +132,17 @@ var menu_state = {
         else {
             this.sound_toggle.frame = 0;
             sound = true;
+        }
+    },
+
+    toggle_screen: function() {
+        if (this.fulscr.frame == 0) {
+            this.fulscr.frame = 1;
+            this.game.scale.startFullScreen();
+        }
+        else {
+            this.fulscr.frame = 0;
+            this.game.scale.stopFullScreen();
         }
     }
 };
