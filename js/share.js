@@ -38,14 +38,14 @@ function share(sType){
 	}
 	else if (sType=='txwb')
 	{
-		sUrl=['http://v.t.qq.com/share/share.php?site=',en('http://git.io/notie'),'&url=',en(l),'&title=',en(sContent),'&pic=',en(sImgUrl)].join('');
+		sUrl=['http://v.t.qq.com/share/share.php?site=',en('http://git.io/notie'),'&url=http%3A%2F%2Fhosuke.github.io%2FNotIE&title=',en(sContent),'&pic=',en(sImgUrl)].join('');
 		w=700;
 		h=470;
 		statFlag='tqq';
 	}
 	else if (sType=='twitter')
 	{
-		sUrl=['https://twitter.com/intent/tweet?original_referer=',en('http://hosuke.github.io/NotIE/'),'&url=',en(l),'&text=',en(sContentEN),'&via=',en('HuangGeyang'),'&hashtags=',en('NOTIE'),'&pic=',en(sImgUrl)].join('');
+		sUrl=['https://twitter.com/intent/tweet?original_referer=',en('http://hosuke.github.io/NotIE/'),'&url=http%3A%2F%2Fhosuke.github.io%2FNotIE&text=',en(sContentEN),'&via=',en('HuangGeyang'),'&hashtags=',en('NOTIE'),'&pic=',en(sImgUrl)].join('');
 		w=700;
 		h=470;
 		statFlag='tqq';
