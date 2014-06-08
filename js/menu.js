@@ -30,7 +30,7 @@ var menu_state = {
         helpertext.anchor.setTo(0.5, 0.5);
 
         // Adding a text centered on the screen
-        var text = this.game.add.text(x, y+40, "Tap Screen to start", style);
+        var text = this.game.add.text(x, y+40, "Tap Here to start", style);
         text.anchor.setTo(0.5, 0.5);
 
         // If the user already played
