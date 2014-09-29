@@ -53,8 +53,11 @@ var win_state = {
             share('facebook');
         });
 
+        var wxsharetext = this.game.add.text(x, 320, "右上可分享至朋友圈", { font: "15px Arial", fill: "#ffffff" });
+        wxsharetext.anchor.setTo(0.5, 0.5);
+
         // Continue
-        var cont = this.game.add.button(60,320,'continue',this.toMenu, this);
+        var cont = this.game.add.button(60,330,'continue',this.toMenu, this);
         cont.alpha = 0;
         this.game.add.tween(cont).delay(1000).to({ alpha: 1}, 500).start();
 
