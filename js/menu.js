@@ -116,7 +116,7 @@ var menu_state = {
         }
 
         // Copyright label
-        var copyright_label = this.game.add.text (x, 390, '© 2014 Huang Geyang and Chen Lu', { font: "12px Arial", fill: "#ffffff" });
+        var copyright_label = this.game.add.text (x, 390, '© 2014 Huang Geyang and He Yunen', { font: "12px Arial", fill: "#ffffff" });
         copyright_label.anchor.setTo(0.5, 0.5);
 
     },
