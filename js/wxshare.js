@@ -4,33 +4,6 @@
 var os="pc";
 var uid="0";
 
-window.onload=function()
-{
-    document.getElementById('sharebt').className="sharebt";
-};
-
-function shareWx()
-{
-    share = true;
-    if(uid<1)
-    {
-        wShare();
-    }else{
-        if(os=='ios')
-        {
-            IosShareToWX(1);
-        }else if(os=='android'){
-            AndriodShareToWX(0);
-
-        }
-    }
-}
-
-function wShare()
-{
-    document.getElementById("sbg").className="sbgshow";
-}
-
 (function () {
     var onBridgeReady = function () {
         // 发送给好友;
